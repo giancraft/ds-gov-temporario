@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // Defina as cores do design system
-  static const Color primaryColor = Color(0xFF1351B4); 
-  static const Color secondaryColor = Color(0xFF168821); 
+  static const Color primaryColor = Color(0xFF1351B4);
+  static const Color secondaryColor = Color(0xFF168821);
 
   static const Color backgroundColor = Colors.white;
   static const Color errorColor = Color(0xFFB00020);
   static const Color textColor = Colors.black87;
 
-  // Crie a tipografia do design system
   static final TextTheme textTheme = TextTheme(
     headlineLarge: TextStyle(
       fontSize: 32,
@@ -26,26 +24,11 @@ class AppTheme {
       fontWeight: FontWeight.w500,
       color: textColor,
     ),
-    bodyLarge: TextStyle(
-      fontSize: 16,
-      color: textColor,
-    ),
-    bodyMedium: TextStyle(
-      fontSize: 14,
-      color: textColor,
-    ),
-    labelLarge: TextStyle(
-      fontSize: 14,
-      color: textColor,
-    ),
-    labelMedium: TextStyle(
-      fontSize: 12,
-      color: textColor,
-    ),
-    labelSmall: TextStyle(
-      fontSize: 10,
-      color: textColor,
-    ),
+    bodyLarge: TextStyle(fontSize: 16, color: textColor),
+    bodyMedium: TextStyle(fontSize: 14, color: textColor),
+    labelLarge: TextStyle(fontSize: 14, color: textColor),
+    labelMedium: TextStyle(fontSize: 12, color: textColor),
+    labelSmall: TextStyle(fontSize: 10, color: textColor),
   );
 
   static final ThemeData themeData = ThemeData(
@@ -54,24 +37,21 @@ class AppTheme {
     appBarTheme: AppBarTheme(
       backgroundColor: primaryColor,
       elevation: 4.0,
-      titleTextStyle: textTheme.titleLarge?.copyWith(color: Colors.white),
+      titleTextStyle: textTheme.headlineLarge?.copyWith(color: Colors.white),
     ),
-    colorScheme: ColorScheme(
+    colorScheme: ColorScheme.light(
       primary: primaryColor,
-      primaryContainer: Color(0xFFC5D4EB),
+      primaryContainer: const Color(0xFFC5D4EB),
       secondary: secondaryColor,
-      secondaryContainer: Color(0xFF03DAC5),
+      secondaryContainer: const Color(0xFF03DAC5),
       surface: Colors.white,
-      error: errorColor,
+      error: errorColor, // Agora está corretamente definido
       onPrimary: Colors.white,
       onSecondary: Colors.black,
       onSurface: Colors.black,
       onError: Colors.white,
-      brightness: Brightness.light,
     ),
   );
-
-  
 }
 
 extension CustomColors on ThemeData {
@@ -93,6 +73,4 @@ extension CustomColors on ThemeData {
   Color get secondary20 => const Color(0xFF70E17B);
   Color get secondary10 => const Color(0xFFB7F5BD);
   Color get secondary05 => const Color(0xFFE3FAE1);
-
-
 }
