@@ -44,15 +44,16 @@ class AppTheme {
     ),
     colorScheme: const ColorScheme(
       primary: primaryColor,
-      primaryContainer: const Color(0xFFC5D4EB),
+      primaryContainer: Color(0xFFC5D4EB),
       secondary: secondaryColor,
-      secondaryContainer: const Color(0xFF03DAC5),
+      secondaryContainer: Color(0xFF03DAC5),
       surface: Colors.white,
-      error: errorColor, // Agora está corretamente definido
+      error: errorColor, 
       onPrimary: Colors.white,
       onSecondary: Colors.black,
       onSurface: Colors.black,
-      onError: Colors.white,
+      onError: Colors.white, 
+      brightness: Brightness.light, 
     ),
   );
 }
@@ -76,4 +77,7 @@ extension CustomColors on ThemeData {
   Color get secondary20 => const Color(0xFF70E17B);
   Color get secondary10 => const Color(0xFFB7F5BD);
   Color get secondary05 => const Color(0xFFE3FAE1);
+
+  Color get errorMessage => const Color(0xFFFDE0DB); 
+  Color get textMessage => const Color(0xFF121212);
 }

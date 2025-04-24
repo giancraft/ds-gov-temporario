@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '../theme.dart';
 
-class CustomBottomNavBar extends StatelessWidget {
+class GovBottomNavBar extends StatelessWidget {
   final int selectedIndex;
   final Function(int) onItemTapped;
   final int itemCount;
 
-  const CustomBottomNavBar({
+  const GovBottomNavBar({
     super.key,
     required this.selectedIndex,
     required this.onItemTapped,
@@ -34,7 +34,7 @@ class CustomBottomNavBar extends StatelessWidget {
             icon: _getIcon(index),
             isActive: isActive,
             activeColor: theme.primary05,
-            inactiveColor: theme.primary30.withOpacity(0.6),
+            inactiveColor: theme.primary30.withAlpha((0.6 * 255).round()),
             onTap: () => onItemTapped(index),
           );
         }),
@@ -44,17 +44,17 @@ class CustomBottomNavBar extends StatelessWidget {
 
   List<BoxShadow> _buildBoxShadow() => [
     BoxShadow(
-      color: Colors.black.withOpacity(0.14),
+      color: Colors.black.withAlpha((0.14 * 255).round()),
       blurRadius: 8,
       offset: const Offset(0, 8),
     ),
     BoxShadow(
-      color: Colors.black.withOpacity(0.12),
+      color: Colors.black.withAlpha((0.12 * 255).round()),
       blurRadius: 3,
       offset: const Offset(0, 3),
     ),
     BoxShadow(
-      color: Colors.black.withOpacity(0.2),
+      color: Colors.black.withAlpha((0.2 * 255).round()),
       blurRadius: 5,
       offset: const Offset(0, 5),
     ),

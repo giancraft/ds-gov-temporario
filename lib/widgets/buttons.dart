@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:teste/theme.dart';
+import 'package:govdesign_system/gov_design_system.dart';
 
 /// Botões padrão do Design System gov.br
-/// Utilize GovPrimaryButton, GovSecondaryButton e GovTextButton para manter a consistência visual.
 
 /// Botão principal (filled)
 class GovPrimaryButton extends StatelessWidget {
@@ -57,7 +56,7 @@ class GovPrimaryButton extends StatelessWidget {
 
 /// Botão secundário (outlined)
 class GovSecondaryButton extends StatelessWidget {
-  /// Conteúdo do botão (texto, ícone, etc.)
+  /// Conteúdo do botão 
   final Widget child;
 
   /// Callback de clique
@@ -108,7 +107,7 @@ class GovSecondaryButton extends StatelessWidget {
 
 /// Botão de texto (text button)
 class GovTextButton extends StatelessWidget {
-  /// Conteúdo do botão (texto, ícone, etc.)
+  /// Conteúdo do botão 
   final Widget child;
 
   /// Callback de clique
