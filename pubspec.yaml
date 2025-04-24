@@ -1,9 +1,8 @@
-name: teste
-description: "A new Flutter project."
-publish_to: 'none'
-
-version: 1.0.0+1
-
+name: govdesign_system
+description: Biblioteca de componentes UI padronizados do design system gov.br.
+version: 1.0.0
+homepage: https://github.com/giancraft/ds-gov-temporario
+repository: https://github.com/giancraft/ds-gov-temporario
 environment:
   sdk: ^3.7.2
 
