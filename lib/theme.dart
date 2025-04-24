@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   // Defina as cores do design system
-  static const Color primaryColor = Color(0xFF1351B4); 
-  static const Color secondaryColor = Color(0xFF168821); 
+  static const Color primaryColor = Color(0xFF1351B4);
+  static const Color secondaryColor = Color(0xFF168821);
 
   static const Color backgroundColor = Colors.white;
   static const Color errorColor = Color(0xFFB00020);
@@ -26,37 +26,25 @@ class AppTheme {
       fontWeight: FontWeight.w500,
       color: textColor,
     ),
-    bodyLarge: TextStyle(
-      fontSize: 16,
-      color: textColor,
-    ),
-    bodyMedium: TextStyle(
-      fontSize: 14,
-      color: textColor,
-    ),
-    labelLarge: TextStyle(
-      fontSize: 14,
-      color: textColor,
-    ),
-    labelMedium: TextStyle(
-      fontSize: 12,
-      color: textColor,
-    ),
-    labelSmall: TextStyle(
-      fontSize: 10,
-      color: textColor,
-    ),
+    bodyLarge: TextStyle(fontSize: 16, color: textColor),
+    bodyMedium: TextStyle(fontSize: 14, color: textColor),
+    labelLarge: TextStyle(fontSize: 14, color: textColor),
+    labelMedium: TextStyle(fontSize: 12, color: textColor),
+    labelSmall: TextStyle(fontSize: 10, color: textColor),
   );
 
   static final ThemeData themeData = ThemeData(
+    useMaterial3: true, 
+    fontFamily: 'Rawline',
     primaryColor: primaryColor,
     textTheme: textTheme,
     appBarTheme: AppBarTheme(
-      backgroundColor: primaryColor,
+      backgroundColor: backgroundColor,
       elevation: 4.0,
-      titleTextStyle: textTheme.titleLarge?.copyWith(color: Colors.white),
+      titleTextStyle: textTheme.titleLarge,
+      iconTheme: const IconThemeData(color: primaryColor),
     ),
-    colorScheme: ColorScheme(
+    colorScheme: const ColorScheme(
       primary: primaryColor,
       primaryContainer: Color(0xFFC5D4EB),
       secondary: secondaryColor,
@@ -70,8 +58,6 @@ class AppTheme {
       brightness: Brightness.light,
     ),
   );
-
-  
 }
 
 extension CustomColors on ThemeData {
@@ -93,6 +79,4 @@ extension CustomColors on ThemeData {
   Color get secondary20 => const Color(0xFF70E17B);
   Color get secondary10 => const Color(0xFFB7F5BD);
   Color get secondary05 => const Color(0xFFE3FAE1);
-
-
 }
