@@ -32,14 +32,17 @@ class AppTheme {
   );
 
   static final ThemeData themeData = ThemeData(
+    useMaterial3: true, 
+    fontFamily: 'Rawline',
     primaryColor: primaryColor,
     textTheme: textTheme,
     appBarTheme: AppBarTheme(
-      backgroundColor: primaryColor,
+      backgroundColor: backgroundColor,
       elevation: 4.0,
-      titleTextStyle: textTheme.headlineLarge?.copyWith(color: Colors.white),
+      titleTextStyle: textTheme.titleLarge,
+      iconTheme: const IconThemeData(color: primaryColor),
     ),
-    colorScheme: ColorScheme.light(
+    colorScheme: const ColorScheme(
       primary: primaryColor,
       primaryContainer: const Color(0xFFC5D4EB),
       secondary: secondaryColor,

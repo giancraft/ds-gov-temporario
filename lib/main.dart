@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'widgets/bottomNavBar.dart';
-import 'widgets/textFields.dart';
-import 'widgets/dialogs.dart';
-import 'theme.dart';
-import 'widgets/progressIndicator.dart';
+import 'package:teste/widgets/app_bar.dart';
+import 'package:teste/widgets/buttons.dart';
+import 'theme.dart'; // Certifique-se de que o caminho está correto
+
 
 void main() {
   runApp(const MyApp());
@@ -52,11 +51,14 @@ class _HomeScreenState extends State<HomeScreen> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Sistema Design Gov",
-          style: theme.textTheme.headlineMedium?.copyWith(color: Colors.white),
-        ),
+      appBar: GovAppBar(
+        title: 'Título da Página',
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.share)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+        ],
+        centerTitle: false,
       ),
       body: SafeArea(
         child: Padding(
@@ -148,16 +150,58 @@ class _HomeScreenState extends State<HomeScreen> {
               "Simples",
               () => CustomDialogs.showTitleDialog(context),
             ),
-            _buildDialogButton(
-              context,
-              "Com Ícone",
-              () => CustomDialogs.showIconTitleDialog(context),
+            const SizedBox(height: 8.0),
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color:
+                    theme
+                        .primary90, // Usando a variação primary90 definida na extensão
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Text(
+                'Container com primary90 (extensão CustomColors)',
+                style: theme.textTheme.bodyLarge?.copyWith(color: Colors.white),
+              ),
             ),
-            _buildDialogButton(
-              context,
-              "Sem Título",
-              () => CustomDialogs.showSimpleDialog(context),
+            const SizedBox(height: 16.0),
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color:
+                    theme
+                        .secondary40, // Usando a variação secondary40 definida na extensão
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Text(
+                'Container com secondary40 (extensão CustomColors)',
+                style: theme.textTheme.bodyLarge?.copyWith(color: Colors.white),
+              ),
             ),
+            SizedBox(height: 20),
+            ElevatedButton(onPressed: () {}, child: Icon(Icons.arrow_back)),
+            SizedBox(height: 20),
+            GovPrimaryButton(child: Icon(Icons.arrow_back, color: Colors.white,), onPressed: (){}),
+            SizedBox(height: 20),
+            GovPrimaryButton(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.save, color: Colors.white),
+                  SizedBox(width: 8),
+                  Text('Salvar', style: TextStyle(color: Colors.white),),
+                ],
+              ),
+              onPressed: () {},
+            ),
+            SizedBox(height: 20),
+            GovSecondaryButton(
+              child: Text('Cancelar'),
+              onPressed: () {},
+            ),
+            SizedBox(height: 20),
+            GovTextButton(child: Text('Link'), onPressed: () {}),
           ],
         ),
       ],
@@ -263,6 +307,7 @@ class _ColorTile extends StatelessWidget {
           Text(label, style: Theme.of(context).textTheme.bodyLarge),
         ],
       ),
+      drawer: Drawer(),
     );
   }
 }
